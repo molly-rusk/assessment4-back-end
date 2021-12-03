@@ -2,9 +2,16 @@
 <html>
   <head>
     <title>Back End Assessment</title>
+    <link href="styles.css" rel="stylesheet">
   </head>
+  <h1 class="header">Here are a few buttons to inspire, motivate, and encourage. Try them out!</h1>
   <body class="container">
-    <button id="complimentButton">Get a compliment</button>
+    <button id="complimentButton" class="button1">Get a compliment</button>
+    <button id="fortuneButton" class="button2">Get a fortune</button>
+    <button id="reminderButton" class="button3">Get a reminder</button>
+    <button id="quoteButton" class="button4">Get a quote</button>
+    <button id="emoticonButton" class="button5">Get an emoticon</button>
+    
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
@@ -16,5 +23,45 @@
             });
       };
     </script>
+    <script>
+      document.getElementById("fortuneButton").onclick = function () {
+        axios.get("http://localhost:4000/api/fortune/")
+             .then(function (response) {
+               const data2 = response.data;
+               alert(data2)
+             })
+      }
+    </script>
+    <p></p>
+    <script>
+      document.getElementById("reminderButton").onclick = function () {
+        axios.get("http://localhost:4000/api/reminder/")
+             .then(function (response) {
+               const data3 = response.data;
+               alert(data3)
+             })
+      }
+    </script>
+    <script>
+      document.getElementById("quoteButton").onclick = function () {
+        axios.get("http://localhost:4000/api/quote/")
+             .then(function (response) {
+               const data4 = response.data;
+               alert(data4)
+             })
+      }
+    </script>
+      <script>
+      document.getElementById("emoticonButton").onclick = function () {
+        axios.get("http://localhost:4000/api/emoticon/")
+             .then(function (response) {
+               const data5 = response.data;
+               alert(data5)
+             })
+      }
+      </script>
+
+   
   </body>
 </html>
+
